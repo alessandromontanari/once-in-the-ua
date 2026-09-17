@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial project setup
 - First draft of SVG map of Ukraine integrated into index page, not appearing yet
-
+- Started drafting some notes
+- Added placeholder for references
 ---
 
 ## [0.1.0] - YYYY-MM-DD
