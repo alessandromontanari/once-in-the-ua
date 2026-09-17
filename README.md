@@ -12,4 +12,9 @@ In the hope that history will not be forgotten.
 
 ## Changelog
 
-I started to work on this project on the 17th of September, 2026. **TBD** days after the start of the full-scale invasion of Ukraine by the Russian terrorist regime.
+I started to work on this project on the 17th of September, 2026. 
+
+This was 1667 days since russia's full-scale invasion of Ukraine began. 
+Or 4593 days since russia began occupying Crimea (factual start of the Russo-Ukrainian war)
+
+Ref: [https://day.alerts.in.ua/en.](https://day.alerts.in.ua/en.).
