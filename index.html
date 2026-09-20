@@ -6,16 +6,16 @@
     <title>Once in the UA</title>
     <style>
         body {
-            margin: 0;
+            /* margin: 0; */
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        canvas {
+        /* canvas {
             border: 1px solid #000;
             background-color: #f0f0f0;
-        }
+        } */
         h1 {
             color: #333;
         }
@@ -23,44 +23,70 @@
             color: #344;
         }
 
-        .description {
-            max-width: 1000px;
+        .header {
+            width: 100vw;
             text-align: center;
-            margin-bottom: 20px;
         }
 
-        .map-container {
-            max-width: 3000px;
-            width: 100%;
-            height: auto;
+        .site-content{
+            flex: content;
+            flex-direction: column;
         }
-        .world-map {
-            position: absolute;
+        .description {
+            float: left;
+            width: 50%;
+            background-color: bisque;
+            text-align: center;
+            /* max-width: 100vw; */
+            /* margin-bottom: 20px; */
+        }
+        .map-container {
+            float: right;
+            width: 50%;
+            background-color: burlywood;
+            text-align: center;
+            /* max-width: 3000px;
+            width: 100%;
+            height: auto; */
+        }
+        /* .world-map { */
+            /* position: absolute;
             top: 0;
-            left: 0;
+            left: 0; */
             /* width: ;
             height: 80%; */
-            min-height: 30em;
+            /* min-height: 30em;
             background-color: #151218;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        svg {
+        } */
+        /* svg {
             width: 100vw;
             height: 100vh;
-        }
+        } */
 
     </style>
 </head>
 <body>
-    <h1>Once in the UA</h1>
+    <header style="text-align: center;">
+        <h1>Once in the UA</h1>
+    </header>    
+    <!-- <div class="header">
+        <h1>Once in the UA</h1>
+    </div> -->
+    <div class="site-content">
     <div class="description">
         <p>
-            "Well, then? We'll fight!" - Volodymyr Zelenskyy, President of Ukraine, <br>
+            "Well, then? We'll fight!" - Volodymyr Zelenskyy, <br> President of Ukraine,
             welcoming Oleksii Danilov, Secretary of the National Security and Defense Council of Ukraine [1].
         </p>
     </div>
+    <div class="map-container">
+        <h4>An interactive map will come here.</h4>
+    </div>
+    </div>
+
     <!-- <div class="world-map">
         <div class="map-container">
             <svg baseprofile="tiny" fill="#ececec" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".1" version="1.2" viewBox="100 100 500 684" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +102,7 @@
         </div>
     </div> -->
 
-    <footer style="margin-top: 40px; padding: 20px; text-align: center;">
+    <footer style="margin-bottom: 10px; padding: 20px; text-align: center;">
         <a href="changelog.html" 
             style="display: inline-block; 
             padding: 0.5em 1em; background: #f5f5f5; 
