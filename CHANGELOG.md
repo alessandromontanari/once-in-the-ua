@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed header, central divs, and footer to have the header stick, the divs scrolling and the footer on the bottom
 - Added Ukrainian flag in the title
 - Higher res map, region borders, and Kyiv City district
-- Added orc sketch
+- Added multiple orc sketches, with relative positionings and scales
 ---
 
 ## [0.1.0] - YYYY-MM-DD
