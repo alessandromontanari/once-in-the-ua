@@ -26,9 +26,9 @@ const orcSketch = `
 
 // Define positions for your orc groups (x, y offsets)
 const orcPositions = [
-    { x: 1100, y: 90, scale: 0.4 },  // First orc
-    { x: 1180, y: 95, scale: 0.4 },  // Second orc
-    { x: 1260, y: 100, scale: 0.4 },  // Third orc
+    { x: 300, y: 90, scale: 0.4 },  // First orc
+    { x: 380, y: 95, scale: 0.4 },  // Second orc
+    { x: 460, y: 100, scale: 0.4 },  // Third orc
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
