@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Ukrainian flag in the title
 - Higher res map, region borders, and Kyiv City district
 - Added multiple orc sketches, with relative positionings and scales
+- Moved all JS code to separate js scripts
+- Making the orcs move with an animation
 ---
 
 ## [0.1.0] - YYYY-MM-DD
