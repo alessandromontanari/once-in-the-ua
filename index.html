@@ -68,6 +68,46 @@
             color: #333;
             margin: 0;
         }
+        
+        #animate-orcs {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
+        }
+        
+        #animate-orcs:hover {
+            background-color: #45a049;
+        }
+        
+        #animate-orcs:active {
+            background-color: #3e8e41;
+        }
+        
+        #reset-orcs {
+            padding: 0.5rem 1rem;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        #reset-orcs:hover {
+            background-color: #d32f2f;
+        }
+        
+        #reset-orcs:active {
+            background-color: #b71c1c;
+        }
 
         footer {
             background-color: #f8f8f8;
@@ -117,12 +157,12 @@
                 President of Ukraine, welcoming Oleksii Danilov,
                 Secretary of the National Security and Defense Council of Ukraine [1].
             </p>
+            <button id="animate-orcs">The invasion has begun</button>
+            <button id="reset-orcs">Reset Orcs</button>
         </div>
         <!-- Map div on the right -->
         <div class="map-container">
             <h4>The map will be interactive at some point.</h4>
-
-
         </div>
         
     </div>
