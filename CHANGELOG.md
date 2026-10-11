@@ -23,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Making the orcs move with an animation
 - Add tank svg
 - modified code logic to add sketches separately, and handle the movement in a single JS script
+- introduced leaflet, centered on Kyiv
+- may continue w/ tutorial of Leaflet, which is so much better than anything else for the maps
+- added python venv for python server: python -m http.server 8000
 ---
 
 ## [0.1.0] - YYYY-MM-DD

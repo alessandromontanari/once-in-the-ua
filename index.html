@@ -69,6 +69,12 @@
             margin: 0;
         }
         
+        #map {
+            height: 400px;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        
         #animate-invasion {
             padding: 0.5rem 1rem;
             background-color: #4CAF50;
@@ -143,6 +149,8 @@
             margin: 0 1rem;
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
     <header>
@@ -157,13 +165,22 @@
                 President of Ukraine, welcoming Oleksii Danilov,
                 Secretary of the National Security and Defense Council of Ukraine [1].
             </p>
-            <button id="animate-invasion">The invasion has begun</button>
-            <button id="reset-invasion">Reset invasion</button>
+            <!-- <button id="animate-invasion">The invasion has begun</button>
+            <button id="reset-invasion">Reset invasion</button> -->
         </div>
         <!-- Map div on the right -->
         <div class="map-container">
             <h4>The map will be interactive at some point.</h4>
+            <div id="map"></div>
         </div>
+        <script>
+            const map = L.map('map').setView([50.45058230133028, 30.533527382435555], 10);
+            // Tile layer that works with local file:// protocol
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+        </script>
+        <!-- If tiles don't load from local file, run: python -m http.server 8000 and open http://localhost:8000 -->
         
     </div>
 
@@ -177,9 +194,9 @@
             </ul>
         </p>
     </footer>
-    <script src="js/map.js"></script>
+    <!-- <script src="js/map.js"></script>
     <script src="js/orc-sketch.js"></script>
     <script src="js/tank-sketch.js"></script>
-    <script src="js/invasion.js"></script>
+    <script src="js/invasion.js"></script> -->
 </body>
 </html>
