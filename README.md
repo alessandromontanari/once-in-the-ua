@@ -18,3 +18,17 @@ This was 1667 days since russia's full-scale invasion of Ukraine began.
 Or 4593 days since russia began occupying Crimea (factual start of the Russo-Ukrainian war)
 
 Ref: [https://day.alerts.in.ua/en.](https://day.alerts.in.ua/en.).
+
+## Roadmap
+
+<ol>
+  <li>Leaflet map:</li>
+    <ol>
+      <li>fix initial zoom, and fractional zoom; DONE</li>
+      <li>fix map container dimension; DONE</li>
+      <li>highlight Ukraine borders; TODO</li>
+    </ol>
+  <li>CSS in stylesheet DONE</li>
+  <li>Add tanks and orcs</li>
+  <li>Make the invasion animation work</li>
+</ol> 

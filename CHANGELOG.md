@@ -26,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - introduced leaflet, centered on Kyiv
 - may continue w/ tutorial of Leaflet, which is so much better than anything else for the maps
 - added python venv for python server: python -m http.server 8000
+- moved Leaflet map to dedicted JS script
+- moved all CSS to a stylesheet, and divided it by sections
+- reorganised index.html
 ---
 
 ## [0.1.0] - YYYY-MM-DD

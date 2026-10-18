@@ -4,151 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Once in the UA</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background-color: #f8f8f8;
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #ddd;
-        }
-
-        header h1 {
-            color: #333;
-            margin: 0;
-        }
-
-        .main-content {
-            display: flex;
-            flex: 1;
-        }
-
-        .description {
-            width: 35%;
-            padding: 1rem;
-            background-color: bisque;
-            overflow-y: auto;
-        }
-
-        .description p {
-            text-align: left;
-            line-height: 1.6;
-        }
-
-        .map-container {
-            width: 65%;
-            background-color: burlywood;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
-        .map-container svg {
-            transform: scale(0.73);
-            border-radius: 350px;
-        }
-
-        .map-container h4 {
-            color: #333;
-            margin: 0;
-        }
-        
-        #map {
-            height: 400px;
-            width: 100%;
-            margin: 1rem 0;
-        }
-        
-        #animate-invasion {
-            padding: 0.5rem 1rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 1rem 0;
-            transition: background-color 0.3s;
-        }
-        
-        #animate-invasion:hover {
-            background-color: #45a049;
-        }
-        
-        #animate-invasion:active {
-            background-color: #3e8e41;
-        }
-        
-        #reset-invasion {
-            padding: 0.5rem 1rem;
-            background-color: #f44336;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 0.5rem;
-            transition: background-color 0.3s;
-        }
-        
-        #reset-invasion:hover {
-            background-color: #d32f2f;
-        }
-        
-        #reset-invasion:active {
-            background-color: #b71c1c;
-        }
-
-        footer {
-            background-color: #f8f8f8;
-            padding: 1rem;
-            text-align: center;
-            border-top: 1px solid #ddd;
-        }
-
-        footer a {
-            display: inline-block;
-            padding: 0.5em 1em;
-            background: #f5f5f5;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #333;
-            border: 1px solid #ddd;
-            margin: 0.5rem 0;
-        }
-
-        footer h3 {
-            color: #344;
-            margin: 1rem 0 0.5rem;
-        }
-
-        footer ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        footer li {
-            text-align: left;
-            display: inline-block;
-            margin: 0 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
@@ -173,13 +29,8 @@
             <h4>The map will be interactive at some point.</h4>
             <div id="map"></div>
         </div>
-        <script>
-            const map = L.map('map').setView([50.45058230133028, 30.533527382435555], 10);
-            // Tile layer that works with local file:// protocol
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-        </script>
+        <script src="js/leaflet-map.js"></script>
+        <!-- It is injecting inside the map div, as you can see from L.map('map') in leaflet-map.js -->
         <!-- If tiles don't load from local file, run: python -m http.server 8000 and open http://localhost:8000 -->
         
     </div>
