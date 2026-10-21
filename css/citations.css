@@ -1,0 +1,27 @@
+.citation {
+  cursor: pointer;
+  color: #2c5282;
+  font-size: 0.8em;
+}
+
+.citation:hover {
+  text-decoration: underline;
+}
+
+/* Tooltip styling */
+.citation[data-citation-id]::after {
+  content: attr(title);
+  position: absolute;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 1000;
+}
+
+.citation[data-citation-id]:hover::after {
+  display: block;
+}

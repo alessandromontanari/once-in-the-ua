@@ -1,0 +1,19 @@
+{
+  "citations": [
+    {
+      "id": "zelenskyy-fight-2023",
+      "text": "\"Well, then? We'll fight!\"",
+      "author": "Volodymyr Zelenskyy",
+      "context": "President of Ukraine, welcoming Oleksii Danilov, Secretary of the National Security and Defense Council of Ukraine",
+      "timestamp": "2022-02-24T06:00:00Z",
+      "reference": {
+        "id": "plokhy-2023",
+        "title": "The Russo-Ukrainian War",
+        "author": "Serhii Plokhy",
+        "year": 2023,
+        "page": 156,
+        "publisher": "W. W. Norton & Company"
+      }
+    }
+  ]
+}

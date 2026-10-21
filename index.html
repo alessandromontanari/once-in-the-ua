@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Once in the UA</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/citations.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
@@ -16,11 +17,7 @@
     <div class="main-content">
         <!-- Description div on the left -->
         <div class="description">
-            <p>
-                "Well, then? We'll fight!" - Volodymyr Zelenskyy, <br>
-                President of Ukraine, welcoming Oleksii Danilov,
-                Secretary of the National Security and Defense Council of Ukraine [1].
-            </p>
+            <p data-citation="zelenskyy-fight-2023"></p>
             <!-- <button id="animate-invasion">The invasion has begun</button>
             <button id="reset-invasion">Reset invasion</button> -->
         </div>
@@ -30,6 +27,8 @@
             <div id="map"></div>
         </div>
         <script src="js/leaflet-map.js"></script>
+        <!-- <script type="module" src="js/sketches.js"></script> -->
+        <!-- <script src="js/svg-overlays.js"></script> -->
         <!-- It is injecting inside the map div, as you can see from L.map('map') in leaflet-map.js -->
         <!-- If tiles don't load from local file, run: python -m http.server 8000 and open http://localhost:8000 -->
         
@@ -38,16 +37,15 @@
     <footer>
         <a href="changelog.html">View Changelog</a>
         <p>&copy; 2026 Once in the UA. All rights reserved.</p>
-        <p>
+        <div id="references">
             <h3>References:</h3>
-            <ul>
-                <li>[1] The Russo-Ukrainian War, Serhii Plokhy, 2023, p. 156.</li>
-            </ul>
-        </p>
+            <ul></ul>
+        </div>
     </footer>
     <!-- <script src="js/map.js"></script>
     <script src="js/orc-sketch.js"></script>
     <script src="js/tank-sketch.js"></script>
     <script src="js/invasion.js"></script> -->
+    <script src="js/citations.js"></script>
 </body>
 </html>
