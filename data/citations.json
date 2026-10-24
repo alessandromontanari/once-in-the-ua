@@ -28,7 +28,22 @@
         "title": "The Russo-Ukrainian War",
         "author": "Serhii Plokhy",
         "year": 2023,
-        "page": 156,
+        "page": 157,
+        "publisher": "W. W. Norton & Company"
+      }
+    },
+    {
+      "id": "martial-law-Feb-2022",
+      "text": "Martial law declared by the National Security and Defense Council",
+      "author": "",
+      "context": "",
+      "timestamp": "2022-02-24T05:00:00Z",
+      "reference": {
+        "id": "plokhy-2023",
+        "title": "The Russo-Ukrainian War",
+        "author": "Serhii Plokhy",
+        "year": 2023,
+        "page": 157,
         "publisher": "W. W. Norton & Company"
       }
     }
