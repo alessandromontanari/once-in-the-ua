@@ -3,3 +3,7 @@ venv
 
 # backups 
 *.bak
+
+# Rust
+target/
+ssr-citations/target/
