@@ -30,6 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - moved all CSS to a stylesheet, and divided it by sections
 - reorganised index.html
 - added citation injection via JS, from JSON database
+- added Rust compilation for citation injection
+- fixed SVG icons injection on the index, with also rotation and flipping
 ---
 
 ## [0.1.0] - YYYY-MM-DD
