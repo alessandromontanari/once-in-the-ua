@@ -1,4 +1,5 @@
-const tankSketch = `
+// single tankSketch as a reusable template
+window.tankSketch = `
 <path style="fill:#06B559;" d="M238.524,172.626v14.814h-5.551h-64.977v-14.814c0-7.075,5.732-12.807,12.807-12.807h44.914
 	C232.792,159.819,238.524,165.551,238.524,172.626z"/>
 <path style="fill:#0B9B53;" d="M443.348,135.064l10.412,25.239l-162.304,66.9l-2.261,0.302c-2.407-8.683-6.688-16.798-12.601-23.715
@@ -74,19 +75,3 @@ const tankSketch = `
 		c0.313,0.109,0.618,0.238,0.913,0.385L85.926,387.729z"/>
 </g>
 `;
-
-// Define positions for tank group (x, y offsets)
-const tankPositions = [
-    { x: 1080, y: 90, scale: 0.2 },
-    { x: 1160, y: 95, scale: 0.2 },
-    { x: 1240, y: 100, scale: 0.2 },
-];
-
-const newTankPositions = [
-    { x: 200, y: 230, scale: 0.2 },
-    { x: 280, y: 235, scale: 0.2 },
-    { x: 360, y: 240, scale: 0.2 },
-];
-
-// Store original positions for reset functionality
-const originalTankPositions = tankPositions.map(pos => ({...pos}));
