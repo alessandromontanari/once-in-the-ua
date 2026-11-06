@@ -6,12 +6,12 @@
  * @param {boolean} flipY - Whether to flip the SVG vertically.
  * @returns {string} The SVG string.
  */
-function createOrcSvg(size = 40, rotation = 0, flipX = false, flipY = false) {
+function createOrcSvg(size = 60, rotation = 0, flipX = false, flipY = false) {
   const scaleX = flipX ? -1 : 1;
   const scaleY = flipY ? -1 : 1;
 
   return `
-    <svg width="${size}" height="${size}" viewBox="0 0 110 120" 
+    <svg width="${size}" height="${size}" viewBox="-5 0 120 120" 
     xmlns="http://www.w3.org/2000/svg" 
     style="transform: rotate(${rotation}deg) scale(${scaleX}, ${scaleY}); transform-origin: center;">
       ${window.orcSketch}
@@ -30,7 +30,7 @@ function createOrcSvg(size = 40, rotation = 0, flipX = false, flipY = false) {
  */
 function addOrcToMap(lat, lng, rotation = 0, flipX = false, flipY = false) {
   const orcIcon = L.divIcon({
-    html: createOrcSvg(40, rotation, flipX, flipY),
+    html: createOrcSvg(35, rotation, flipX, flipY),
     className: 'orc-marker',
     iconSize: [40, 40],
     iconAnchor: [20, 20]
@@ -52,7 +52,7 @@ function createTankSvg(size = 60, rotation = 0, flipX = false, flipY = false) {
   const scaleY = flipY ? -1 : 1;
   
   return `
-    <svg width="${size}" height="${size}" viewBox="0 0 500 400" 
+    <svg width="${size}" height="${size}" viewBox="-40 0 550 400" 
     xmlns="http://www.w3.org/2000/svg" 
     style="transform: rotate(${rotation}deg) scale(${scaleX}, ${scaleY}); transform-origin: center;">
       ${window.tankSketch}
@@ -79,9 +79,72 @@ function addTankToMap(lat, lng, rotation = 0, flipX = false, flipY = false) {
   return L.marker([lat, lng], { icon: tankIcon }).addTo(window.map);
 }
 
+/**
+ * Creates an SVG for a russian flag, using the russiaFlag template from ./js/flag-sketches.js.
+ * @param {number} size - The size of the SVG.
+ * @returns {string} The SVG string.
+ */
+function createrussiaFlagSvg(size = 40) {
+  return `
+    <svg width="${size}" height="${size}" viewBox="0 0 36 24"
+    xmlns="http://www.w3.org/2000/svg">
+      ${window.russiaFlag}
+    </svg>
+  `;
+}
+
+/**
+ * Adds a tank marker to the map at the specified coordinates.
+ * @param {number} lat - The latitude of the marker.
+ * @param {number} lng - The longitude of the marker.
+ * @returns {L.Marker} The added marker.
+ */
+function addrussiaFlagToMap(lat, lng) {
+  const russiaFlagIcon = L.divIcon({
+    html: createrussiaFlagSvg(40),
+    className: 'russia-flag-marker',
+    iconSize: [40, 27],    // 36:24 ratio
+    iconAnchor: [20, 13]   // Center anchor
+  });
+  return L.marker([lat, lng], { icon: russiaFlagIcon }).addTo(window.map);
+}
+
+/**
+ * Creates an SVG for a Ukraine flag, using the UkraineFlag template from ./js/flag-sketches.js.
+ * @param {number} size - The size of the SVG.
+ * @returns {string} The SVG string.
+ */
+function createUkraineFlagSvg(size = 40) {
+  return `
+    <svg width="${size}" height="${size}" viewBox="0 0 36 24"
+    xmlns="http://www.w3.org/2000/svg">
+      ${window.UkraineFlag}
+    </svg>
+  `;
+}
+
+/**
+ * Adds a tank marker to the map at the specified coordinates.
+ * @param {number} lat - The latitude of the marker.
+ * @param {number} lng - The longitude of the marker.
+ * @returns {L.Marker} The added marker.
+ */
+function addUkraineFlagToMap(lat, lng) {
+  const UkraineFlagIcon = L.divIcon({
+    html: createUkraineFlagSvg(40),
+    className: 'ukraine-flag-marker',
+    iconSize: [40, 27],    // 36:24 ratio ≈ 40:26.7
+    iconAnchor: [20, 13]   // Center point
+  });
+  return L.marker([lat, lng], { icon: UkraineFlagIcon }).addTo(window.map);
+}
+
+addrussiaFlagToMap(51.380617, 36.319933, 0);
 // Place orc near Belgorod
 addOrcToMap(50.780617, 36.519933, 0);
 // Place tank near Belgorod
 addTankToMap(50.780617, 36.319933, 0, flipX = true, flipY = false);
 
-addTankToMap(49.251494, 32.516949, 0);
+// near Kyiv
+addUkraineFlagToMap(49.251494, 32.516949, 0);
+addTankToMap(49.651494, 32.516949, 0);

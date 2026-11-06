@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added citation injection via JS, from JSON database
 - added Rust compilation for citation injection
 - fixed SVG icons injection on the index, with also rotation and flipping
+- fixed SVG icons fitting inside the viewBox
+- added SVG icons for flags
 ---
 
 ## [0.1.0] - YYYY-MM-DD
