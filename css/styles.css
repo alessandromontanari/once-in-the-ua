@@ -19,7 +19,7 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1001 !important;
     border-bottom: 1px solid #ddd;
 }
 
@@ -106,6 +106,15 @@ footer li {
     text-align: left;
     display: inline-block;
     margin: 0 1rem;
+}
+
+
+/* Leaflet map related styles */
+.leaflet-marker-icon svg {
+    transition: transform 0.2s;
+}
+.leaflet-control-container {
+    z-index: 1000 !important;
 }
 
 /* Animation */
