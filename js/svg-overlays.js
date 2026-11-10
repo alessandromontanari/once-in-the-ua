@@ -94,7 +94,7 @@ function createrussiaFlagSvg(size = 40) {
 }
 
 /**
- * Adds a tank marker to the map at the specified coordinates.
+ * Adds a russian flag marker to the map at the specified coordinates.
  * @param {number} lat - The latitude of the marker.
  * @param {number} lng - The longitude of the marker.
  * @returns {L.Marker} The added marker.
@@ -124,7 +124,7 @@ function createUkraineFlagSvg(size = 40) {
 }
 
 /**
- * Adds a tank marker to the map at the specified coordinates.
+ * Adds a Ukraine flag marker to the map at the specified coordinates.
  * @param {number} lat - The latitude of the marker.
  * @param {number} lng - The longitude of the marker.
  * @returns {L.Marker} The added marker.
