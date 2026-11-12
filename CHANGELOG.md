@@ -34,6 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fixed SVG icons injection on the index, with also rotation and flipping
 - fixed SVG icons fitting inside the viewBox
 - added SVG icons for flags
+- added colored GeoJSON on Ukraine oblasts
+- experimenting w/ download of occupied parts of Ukraine from DeepState
 ---
 
 ## [0.1.0] - YYYY-MM-DD
