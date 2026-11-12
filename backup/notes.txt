@@ -1,2 +1,14 @@
-https://simplemaps.com/custom/europe/USzM40BG1
-https://www.youtube.com/watch?v=Ctiv2-QlqYs / but instead customize a map of Europe which is much better resolution + try to add russia from another customize tool of always simplemaps.com using russia's map 
+Direct API Endpoints
+
+If you want to fetch data programmatically without relying on a third-party GitHub mirror, users on Reddit's r/remotesensing community note that you can query the official DeepStateMap API directly:
+• Fetch Available Timestamps. Send a GET request to https://deepstatemap.live to retrieve a JSON list of historical update IDs and timestamps.
+• Download Specific GeoJSON. Append a specific update ID from that list to https://deepstatemap.live<id>/geojson to download the raw GeoJSON feature collection for that exact date.
+
+Data Structure & Usage Notes
+
+• Coordinate System. All standard GeoJSON feeds from these sources use the WGS84 (EPSG:4326) coordinate reference system, making them directly compatible with QGIS, Leaflet, Mapbox, and Python's geopandas library.
+• Zone Classification. Depending on the endpoint, features are typically categorized by status (such as occupied territory, Crimea/ORDLO, liberated areas, and contested/gray zones needing clarification).
+If you'd like, let me know:
+• Whether you need a single current snapshot or a historical time-series
+• Which tool or programming language you are loading the data into (e.g., Python, QGIS, Leaflet)
+I can provide a direct raw file URL or a quick code snippet to fetch and filter the zones for you.
