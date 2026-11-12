@@ -7,3 +7,6 @@ venv
 # Rust
 target/
 ssr-citations/target/
+
+# big data
+data/ukr_admin1.geojson
