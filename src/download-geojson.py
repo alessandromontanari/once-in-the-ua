@@ -8,7 +8,6 @@ import time
 import requests
 
 import geopandas as gpd
-from argparse import ArgumentParser
 from datetime import datetime
 from shapely.geometry import shape
 from shapely.geometry import Polygon
@@ -27,9 +26,9 @@ MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds
 
 
-def make_api_request(date_str):
+def make_api_request():
     """Make a request to the API and return the JSON response."""
-    api_url = f"https://deepstatemap.live/api/history/{date_str}"
+    api_url = f"https://deepstatemap.live/api/history/last"
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; RM-1152) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15254"
@@ -119,28 +118,14 @@ def save_to_js(gdf, output_dir, filename):
 
 def main():
 
-    parser = ArgumentParser(
-        description="Parses for datetime, to download map of the invaded part of Ukraine from DeepState"
-    )
-    parser.add_argument(
-        "-d", "--date", 
-        default=f"{datetime.now().strftime('%Y%m%d')}", 
-        help="Date in YYYY-MM-DD"
-    )
-
-    args, _ = parser.parse_known_args()
-
-    date = args.date
-
-    # OUTPUT_FILENAME = f"deepstatemap_data_{datetime.now().strftime('%Y%m%d')}"
-    OUTPUT_FILENAME = f"deepstatemap_data_{date.replace('-', '')}"  # Remove hyphens for filename
+    OUTPUT_FILENAME = f"deepstatemap_data_{datetime.now().strftime('%Y%m%d')}"
 
     # Ensure output directory exists
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     
     # Make API request
     logger.info("Making API request...")
-    raw_data = make_api_request(date)
+    raw_data = make_api_request()
     
     # Process data
     logger.info("Processing data...")
