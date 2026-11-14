@@ -19,6 +19,14 @@ Or 4593 days since russia began occupying Crimea (factual start of the Russo-Ukr
 
 Ref: [https://day.alerts.in.ua/en.](https://day.alerts.in.ua/en.).
 
+## Instructions
+
+The citations can be compiled via the Rust script:
+```
+cd ssr-citations
+cargo clean && cargo run
+```
+
 ## Roadmap
 
 <ol>
@@ -26,9 +34,11 @@ Ref: [https://day.alerts.in.ua/en.](https://day.alerts.in.ua/en.).
     <ol>
       <li>fix initial zoom, and fractional zoom; DONE</li>
       <li>fix map container dimension; DONE</li>
-      <li>highlight Ukraine borders; TODO</li>
+      <li>highlight Ukraine borders; DONE</li>
+      <li>find a way of highlighting occupied zones getting data from DeepState? TODO</li>
     </ol>
   <li>CSS in stylesheet DONE</li>
-  <li>Add tanks and orcs</li>
+  <li>Add tanks and orcs DONE</li>
   <li>Make the invasion animation work</li>
 </ol> 
+
