@@ -25,6 +25,16 @@ JS_DIR = "./js"
 MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds
 
+icon_keys = [
+    "regiment", 
+    "battalion", 
+    "brigade", 
+    "division", 
+    "army", 
+    "corps",
+    "unit",
+    "squad"
+]
 
 def make_api_request():
     """Make a request to the API and return the JSON response."""
@@ -57,9 +67,11 @@ def process_data(data):
         geom = f['geometry']
         name = f['properties']['name']
         new_feature = {
-            "name":name,
-            "geometry":wkt.loads(wkt.dumps(shape(geom), output_dimension=2))
-            }
+            "name": name,
+            "geometry": wkt.loads(
+                wkt.dumps(shape(geom), output_dimension=2)
+            )
+        }
 
         geo_list.append(new_feature)
         
@@ -67,11 +79,19 @@ def process_data(data):
     def extract_first_part(name, part=0):
         first_part = name.split('///')[part].strip()
         return first_part
-    
+
+    icons_list = []
+    seen_names = set()
     for item in geo_list:
         item['name'] = extract_first_part(item['name'], part=1)
+        # Check if extracted name contains any keyword (case-insensitive)
+        name_lower = item['name'].lower()
+        if any(keyword in name_lower for keyword in icon_keys):
+            if name_lower not in seen_names:
+                icons_list.append(item['name'])
+                seen_names.add(name_lower)
     
-    return geo_list
+    return geo_list, icons_list
 
 
 def create_geodataframe(geo_list):
@@ -129,7 +149,10 @@ def main():
     
     # Process data
     logger.info("Processing data...")
-    processed_data = process_data(raw_data)
+    processed_data, icons_data = process_data(raw_data)
+
+    # TODO: save icons_data and use it to place tanks and infantry
+    print(icons_data)
     
     # Create GeoDataFrame
     logger.info("Creating GeoDataFrame...")
