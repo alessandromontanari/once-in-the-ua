@@ -138,7 +138,7 @@ def save_to_js(gdf, output_dir, filename):
 
 def main():
 
-    OUTPUT_FILENAME = f"deepstatemap_data_{datetime.now().strftime('%Y%m%d')}"
+    OUTPUT_FILENAME = f"deepstatemap_data_latest"
 
     # Ensure output directory exists
     os.makedirs(OUTPUT_DIR, exist_ok=True)
