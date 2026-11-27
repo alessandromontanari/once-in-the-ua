@@ -35,8 +35,9 @@
         <script src="js/tank-sketch.js"></script>
         <script src="js/flag-sketches.js"></script>
         <script src="js/svg-overlays.js"></script>
+        <script src="js/enemy-icons.js"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', async function() {
                 const map = window.map;
                 const svgs = document.querySelectorAll('.leaflet-marker-icon svg');
                 const originalTransforms = new Map();
@@ -68,6 +69,9 @@
 
                 // Trigger initial scale
                 map.fire('zoomend');
+                
+                // Load and display enemy icons
+                await loadAndDisplayEnemyIcons();
             });
         </script>
     </div>
