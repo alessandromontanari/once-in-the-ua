@@ -1,0 +1,77 @@
+{
+  "categories": {
+    "airborne": {
+      "suggested_icon": "parachute",
+      "keywords": ["air assault", "airborne", "paratrooper", "parachute", "VDV", "airland", "air regiment", "parachute regiment"]
+    },
+    "spetsnaz": {
+      "suggested_icon": "special_forces",
+      "keywords": ["spetsnaz", "GRU", "special purpose", "reconnaissance-assault", "SOF", "special forces", "special forces battalion"]
+    },
+    "tank": {
+      "suggested_icon": "tank",
+      "keywords": ["tank division", "tank regiment", "tank brigade", "tank ", " armored", " tank division", " tank regiment", " tank brigade", "26th tank", "237th tank", "239th tank", "218st tank", "218th tank", "80th guards tank"]
+    },
+    "artillery": {
+      "suggested_icon": "artillery",
+      "keywords": ["artillery", "self-propelled", "rocket artillery", "cannon", "howitzer", "machine gun artillery", "rocket"]
+    },
+    "marines": {
+      "suggested_icon": "anchor",
+      "keywords": ["marines", "naval infantry", "coastal defense"]
+    },
+    "engineer": {
+      "suggested_icon": "engineer",
+      "keywords": ["engineer", "sapper", "combat engineer"]
+    },
+    "reconnaissance": {
+      "suggested_icon": "binoculars",
+      "keywords": ["reconnaissance", "scout", "intelligence", "recce", "separate reconnaissance", "intelligence battalion", "reconnaissance battalion"]
+    },
+    "air": {
+      "suggested_icon": "fighter_jet",
+      "keywords": ["airfield", "aviation", "fighter", "bomber", "air division", "fighter aviation", "assault regiment"]
+    },
+    "rosguard": {
+      "suggested_icon": "shield_rosguard",
+      "keywords": ["Rosguard", "Akhmat", "national guard"]
+    },
+    "bars": {
+      "suggested_icon": "reserve",
+      "keywords": ["BARS", "squad BARS"]
+    },
+    "volunteer": {
+      "suggested_icon": "volunteer",
+      "keywords": ["volunteer", "assault corps", "African Corps", "Piatnashka", "Vitirany", "Somalia Battalion", "Bashkortostan"]
+    },
+    "combined_arms": {
+      "suggested_icon": "shield",
+      "keywords": ["combined arms", "army corps", "army", "CA", "combined-arms", " army corps", "combined arms army", " army"]
+    },
+    "motorized_rifle": {
+      "suggested_icon": "infantry_fighting_vehicle",
+      "keywords": ["motorized rifle", "motor rifle", "MRD", "MRB", "mechanized", "motorized", "infantry", "rifle regiment", "rifle brigade", "motorizedrifle", "motor rifle"]
+    },
+    "other": {
+      "suggested_icon": "infantry",
+      "keywords": []
+    }
+  },
+  "priority_order": [
+    "airborne",
+    "spetsnaz",
+    "tank",
+    "artillery",
+    "marines",
+    "engineer",
+    "reconnaissance",
+    "air",
+    "rosguard",
+    "bars",
+    "volunteer",
+    "combined_arms",
+    "motorized_rifle",
+    "other"
+  ],
+  "fallback": "other"
+}

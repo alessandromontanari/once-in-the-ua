@@ -66,8 +66,13 @@ def process_data(data):
     for f in data['map']['features']:
         geom = f['geometry']
         name = f['properties']['name']
+        
+        # Split the name by '///' and take part 1 (English name)
+        parts = name.split('///')
+        display_name = parts[1].strip() if len(parts) > 1 else name
+        
         new_feature = {
-            "name": name,
+            "name": display_name,
             "geometry": wkt.loads(
                 wkt.dumps(shape(geom), output_dimension=2)
             )
@@ -75,23 +80,21 @@ def process_data(data):
 
         geo_list.append(new_feature)
         
-    # Split the name by '///' and take the first part
-    def extract_first_part(name, part=0):
-        first_part = name.split('///')[part].strip()
-        return first_part
-
-    icons_list = []
+    icons_dict = {}
     seen_names = set()
     for item in geo_list:
-        item['name'] = extract_first_part(item['name'], part=1)
-        # Check if extracted name contains any keyword (case-insensitive)
         name_lower = item['name'].lower()
         if any(keyword in name_lower for keyword in icon_keys):
             if name_lower not in seen_names:
-                icons_list.append(item['name'])
+                # Extract coordinates from Point geometry
+                geom = item["geometry"]
+                if hasattr(geom, 'geom_type') and geom.geom_type == 'Point':
+                    coords = geom.coords
+                    if coords is not None:
+                        icons_dict[item['name']] = list(coords)
                 seen_names.add(name_lower)
     
-    return geo_list, icons_list
+    return geo_list, icons_dict
 
 
 def create_geodataframe(geo_list):
@@ -151,8 +154,13 @@ def main():
     logger.info("Processing data...")
     processed_data, icons_data = process_data(raw_data)
 
-    # TODO: save icons_data and use it to place tanks and infantry
-    print(icons_data)
+    # Save icons data to JSON file
+    ICONS_DIR = "./data/enemy_positions"
+    os.makedirs(ICONS_DIR, exist_ok=True)
+    icons_output_path = os.path.join(ICONS_DIR, "enemy_positions_latest.json")
+    with open(icons_output_path, 'w') as f:
+        json.dump(icons_data, f, indent=2)
+    logger.info(f"Exported icons data to {icons_output_path}")
     
     # Create GeoDataFrame
     logger.info("Creating GeoDataFrame...")

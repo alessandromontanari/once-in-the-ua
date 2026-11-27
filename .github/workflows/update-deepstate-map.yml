@@ -33,6 +33,15 @@ jobs:
         run: |
           python src/download-geojson.py
           
+      - name: Wait for file synchronization
+        run: |
+          # Ensure enemy_positions_latest.json is fully written and accessible
+          sleep 10
+          
+      - name: Run classification script
+        run: |
+          python src/classify_enemy_units.py
+          
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
@@ -40,7 +49,7 @@ jobs:
           
           # Check if there are changes to commit
           if [ -n "$(git status --porcelain)" ]; then
-            git add data/geojson-invasion/ js/deepstatemap_data_latest.js
+            git add data/geojson-invasion/ data/enemy_positions/ js/deepstatemap_data_latest.js
             git commit -m "Automated update: DeepState map data [skip ci]"
             git push
           else

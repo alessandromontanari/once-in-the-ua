@@ -1,6 +1,9 @@
 # envs
 venv
 
+# python 
+**/__pycache__
+
 # backups 
 *.bak
 
