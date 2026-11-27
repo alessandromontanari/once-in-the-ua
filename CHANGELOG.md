@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - experimenting w/ download of occupied parts of Ukraine from DeepState
 - add GitHub action to automate download from DeepState map
 - add enemy icon downloads, and classification, via automated GitHub action
+- enemy icons automatically added as SVG icons on the leaflet map
 ---
 
 ## [0.1.0] - YYYY-MM-DD
